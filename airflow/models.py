@@ -515,7 +515,7 @@ class Connection(Base):
     port = Column(Integer())
     is_encrypted = Column(Boolean, unique=False, default=False)
     is_extra_encrypted = Column(Boolean, unique=False, default=False)
-    _extra = Column('extra', String(5000))
+    _extra = Column('extra', String(2000))
 
     def __init__(
             self, conn_id=None, conn_type=None,
@@ -3107,7 +3107,7 @@ class Chart(Base):
     show_datatable = Column(Boolean)
     show_sql = Column(Boolean, default=True)
     height = Column(Integer, default=600)
-    default_params = Column(String(5000), default="{}")
+    default_params = Column(String(2000), default="{}")
     owner = relationship(
         "User", cascade=False, cascade_backrefs=False, backref='charts')
     x_is_date = Column(Boolean, default=True)

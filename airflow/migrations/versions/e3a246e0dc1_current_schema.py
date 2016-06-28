@@ -48,7 +48,7 @@ def upgrade():
             sa.Column('login', sa.String(length=500), nullable=True),
             sa.Column('password', sa.String(length=500), nullable=True),
             sa.Column('port', sa.Integer(), nullable=True),
-            sa.Column('extra', sa.String(length=5000), nullable=True),
+            sa.Column('extra', sa.String(length=2000), nullable=True),
             sa.PrimaryKeyConstraint('id')
         )
     if 'dag' not in tables:
@@ -216,7 +216,7 @@ def upgrade():
             sa.Column('show_datatable', sa.Boolean(), nullable=True),
             sa.Column('show_sql', sa.Boolean(), nullable=True),
             sa.Column('height', sa.Integer(), nullable=True),
-            sa.Column('default_params', sa.String(length=5000), nullable=True),
+            sa.Column('default_params', sa.String(length=2000), nullable=True),
             sa.Column('x_is_date', sa.Boolean(), nullable=True),
             sa.Column('iteration_no', sa.Integer(), nullable=True),
             sa.Column('last_modified', sa.DateTime(), nullable=True),
